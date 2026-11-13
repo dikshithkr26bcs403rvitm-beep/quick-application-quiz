@@ -22,6 +22,7 @@
    ```bash
    npm install
    npm run seed:admin
+   npm run seed:quizzes
    npm run dev
    ```
 6. Open http://localhost:5000
@@ -36,3 +37,10 @@ Then run `npm run seed:admin`. Use the exact values you configured to log in. Ch
 ## Important
 - Student sign-up always creates a student account. The public form cannot create admins.
 - This is a learning/demo project, not a secure high-stakes quiz system. The browser timer can be manipulated; server-enforced attempt deadlines, audit logs, stronger rate limits, backups, HTTPS and proctoring are needed before real college deployment.
+
+
+## Sample quizzes
+Run `npm run seed:quizzes` after configuring `.env` to create or refresh four published sample quizzes: Quiz1 (OOPS), Quiz2 (DSA), Quiz3 (PDS), and Quiz4 (DDCO). Each quiz contains 10 MCQs, 1 mark per question, no negative marking, and a 15-minute timer. Running the command again updates these four named sample quizzes instead of creating duplicates.
+
+## Instant answer feedback
+During a quiz, the selected option is checked through the backend. A wrong choice is highlighted red, the correct choice green, and the correct answer text is shown immediately. This is a practice/learning feature; correct answers are not included in the normal quiz-fetch response.
